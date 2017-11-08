@@ -19,8 +19,12 @@ int main(int argc, char const *argv[]){
 	string aux;
 	fstream f;
 
-	f.open("csv.txt");
-
+	//f.open("csv.txt");
+	//while(f >> aux){
+	//	cout << aux << endl;
+	//}
+	//cv::waitKey(0);
+	
 	cout << "Instruções: " << endl;
 	cout << "\t1 - Posicione o rosto dentro do quadrado." << endl;
 	cout << "\t2 - Aperte Enter quando quiser tirar a foto" << endl;
@@ -29,7 +33,7 @@ int main(int argc, char const *argv[]){
 	cout << "Entendido?";
 	cin >> aux;
 
-	int face_id = 0;
+	int face_id = 1;
 	cv::namedWindow("Get_Face", CV_WINDOW_NORMAL);
 	cv::namedWindow("Gray", CV_WINDOW_NORMAL);
 	//cv::namedWindow("Print", CV_WINDOW_NORMAL);
@@ -65,7 +69,7 @@ int main(int argc, char const *argv[]){
 			ostringstream convert;
 			convert << count;
 			
-			cv::imwrite("IMG_"+convert.str()+".jpg", face);
+			cv::imwrite("/home/cfcv/Desktop/git/Face_Recognition/src_get/personnes/IMG_"+convert.str()+".jpg", face);
 			count++;
 			//cv::waitKey(0);
 		}
